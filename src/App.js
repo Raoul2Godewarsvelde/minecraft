@@ -34,7 +34,14 @@ const App = () => {
           <Player position={[0, 3, 10]} />
           <Box />
           <Cube position={[0, 0.5, 0]} type='wood' />
-          <Ground />
+          <Cube position={[1, 0.5, 0]} type='log' />
+          <Cube position={[2, 0.5, 0]} type='glass' />
+          <Cube position={[3, 0.5, 0]} type='dirt' />
+          <Cube position={[4, 0.5, 0]} type='grass' />
+
+          <Cube position={[0, 5, 0]} type='grass' />
+          <Cube position={[4, 5, 0]} type='grass' />
+          <Ground position={[0, 0.5, 0]} />
         </Physics>
       </Canvas>
     </>
