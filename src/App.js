@@ -2,6 +2,11 @@ import { Canvas } from '@react-three/fiber'
 import { Sky } from '@react-three/drei'
 import { Physics } from '@react-three/cannon'
 
+import { nanoid } from 'nanoid'
+
+import { useStore } from './Hooks/useStore'
+import { useInterval } from './Hooks/useInterval'
+
 import Player from './Components/Player'
 import Box from './Components/Box'
 import Cube from './Components/Cube'
@@ -10,6 +15,17 @@ import Ground from './Components/Ground'
 import './App.scss'
 
 const App = () => {
+
+  const [cubes, saveWorld] = useStore((state) => [
+    state.cubes,
+    state.saveWorld
+  ])
+
+  useInterval(() => {
+    saveWorld(cubes)
+    console.log('saved')
+  }, 10000)
+
   return (
     <>
       <Canvas shadowMap shadows sRBG gl={{ alpha: false }}>
@@ -32,14 +48,9 @@ const App = () => {
         <Physics gravity={[0, -30, 0]}>
           <Player position={[0, 3, 10]} />
           <Box />
-          <Cube position={[0, 0.5, 0]} type='wood' />
-          <Cube position={[1, 0.5, 0]} type='log' />
-          <Cube position={[2, 0.5, 0]} type='glass' />
-          <Cube position={[3, 0.5, 0]} type='dirt' />
-          <Cube position={[4, 0.5, 0]} type='grass' />
-
-          <Cube position={[0, 5, 0]} type='grass' />
-          <Cube position={[4, 5, 0]} type='grass' />
+          {cubes.map((cube) => (
+            <Cube key={nanoid()} position={cube.pos} texture={cube.texture} />
+          ))}
           <Ground position={[0, 0.5, 0]} />
         </Physics>
       </Canvas>

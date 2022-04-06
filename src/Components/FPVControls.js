@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
-import { PointerLockControls as PointerLockControlsImpl } from 'three/examples/jsm/controls/PointerLockControls';
-import { useThree, extend } from '@react-three/fiber';
-import { useRef } from 'react';
+import React, { useRef, useEffect } from 'react'
 
-extend({ PointerLockControlsImpl });
+import { PointerLockControls as PointerLockControlsImpl } from 'three/examples/jsm/controls/PointerLockControls'
+import { useThree, extend } from '@react-three/fiber'
+
+extend({ PointerLockControlsImpl })
 
 export const FPVControls = (props) => {
-  const { camera, gl } = useThree();
-  const controls = useRef();
+  const { camera, gl } = useThree()
+  const controls = useRef()
 
   useEffect(() => {
     document.addEventListener('click', () => {
-      controls.current.lock();
-    });
-  }, []);
+      controls.current.lock()
+    })
+  }, [])
 
   return (
     <pointerLockControlsImpl
@@ -21,5 +21,5 @@ export const FPVControls = (props) => {
       args={[camera, gl.domElement]}
       {...props}
     />
-  );
-};
+  )
+}
