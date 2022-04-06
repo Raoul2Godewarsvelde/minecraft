@@ -12,7 +12,7 @@ import './App.scss'
 const App = () => {
   return (
     <>
-      <Canvas shadowMap shadows sRBG>
+      <Canvas shadowMap shadows sRBG gl={{ alpha: false }}>
         <Sky castShadow sunPosition={[100, 20, 100]} />
         <OrbitControls />
         <directionalLight
