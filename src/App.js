@@ -14,7 +14,7 @@ const App = () => {
     <>
       <Canvas shadowMap shadows sRBG gl={{ alpha: false }}>
         <Sky castShadow sunPosition={[100, 20, 100]} />
-        <OrbitControls />
+        {/* <OrbitControls /> */}
         <directionalLight
           position={[5, 7, 0]}
           intensity={1.5}

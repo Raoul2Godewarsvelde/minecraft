@@ -19,13 +19,6 @@ const Camera = React.forwardRef((props, ref) => {
                 /* fov={60} */
                 onUpdate={self => self.updateProjectionMatrix()}
             />
-            <OrbitControls
-                camera={ref.current}
-                maxDistance = {25}
-                minDistance = {5}
-                maxPolarAngle = {Math.PI / 2}
-                minPolarAngle = {-Math.PI / 2}
-            />
         </>
     )
 })

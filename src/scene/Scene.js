@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { createRef, Suspense } from 'react'
 
 import { Canvas } from '@react-three/fiber'
 
@@ -8,17 +8,17 @@ import Lights from './Lights'
 import './css/Scene.scss'
 
 const Scene = (props) => {
-    const camera = React.createRef()
+    const camera = createRef()
     return (
         <>
             <Canvas id={'scene_CANVAS'}>
-                <Camera 
+                {/* <Camera 
                     ref={camera}
                     makeDefault
                     position={[0, 0, 15]}
                     dpr={0.01}
                     pixelRatio={1}
-                />
+                /> */}
                 <Lights />
                 <Suspense fallback={null}>
                     <mesh
