@@ -1,4 +1,3 @@
-import * as THREE from 'three'
 import { Canvas } from '@react-three/fiber'
 import { Sky } from '@react-three/drei'
 import { Physics } from '@react-three/cannon'
@@ -13,7 +12,8 @@ import Box from './Components/Box'
 import Cube from './Components/Cube'
 import Ground from './Components/Ground'
 
-import testShader from './scene/material/TestMaterial'
+import TestShader from './Components/Shaders/TestShader'
+import TextureShader from './Components/Shaders/TextureShader'
 
 import './App.scss'
 
@@ -37,7 +37,7 @@ const App = () => {
           position={[5, 7, 0]}
           intensity={1.5}
           castShadow
-          shadowBias={-0.00001}
+          shadow-bias={-0.00001}
           shadow-camera-near={0.1}
           shadow-mapSize-width={4096}
           shadow-mapSize-height={4096}
@@ -59,28 +59,8 @@ const App = () => {
           <Ground position={[0, 0.5, 0]} />
 
           {/* CREATING EARTH + ADDING CITIES TO A PLANET */}
-
-          <mesh
-                position-x={5}
-                position-y={5}
-                position-z={5}
-                scale-x={1}
-                scale-y={1}
-            >
-                <planeBufferGeometry
-                    attach='geometry'
-                    args={[10, 10, 1, 1]}
-                />
-                <testShader
-                    attach='material'
-                    side={THREE.DoubleSide}
-                    transparent
-                />
-                {/* <meshBasicMaterial
-                    attach='material'
-                    color={'red'}
-                /> */}
-            </mesh>
+          <TestShader />
+          <TextureShader />
         </Physics>
       </Canvas>
     </>

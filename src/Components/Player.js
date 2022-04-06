@@ -26,7 +26,7 @@ const Player = (props) => {
     
     useEffect(() => {
         api.velocity.subscribe((v) => (velocity.current = v))
-    }, [])
+    }, [api.velocity])
 
     useFrame((state) => {
         ref.current.getWorldPosition(camera.position)
