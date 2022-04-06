@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Sky } from '@react-three/drei'
+import { Sky } from '@react-three/drei'
 import { Physics } from '@react-three/cannon'
 
 import Player from './Components/Player'
@@ -14,7 +14,6 @@ const App = () => {
     <>
       <Canvas shadowMap shadows sRBG gl={{ alpha: false }}>
         <Sky castShadow sunPosition={[100, 20, 100]} />
-        {/* <OrbitControls /> */}
         <directionalLight
           position={[5, 7, 0]}
           intensity={1.5}
