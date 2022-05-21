@@ -1,31 +1,15 @@
-import React, { createRef } from 'react'
+import React, { useState } from 'react'
 
-import { Canvas } from '@react-three/fiber'
+import { Scene } from '@components/Home/Registration/index'
 
-import { PerspectiveCamera } from '@components/Cameras/Registration/index'
-
-import { Cube } from '@components/Meshes/Primitives/Registration/index'
+import { HomeController } from '@components/Controllers/Registration/index'
 
 const Home = () => {
 
-    const camera = createRef()
-
     return (
         <>
-            <Canvas id={'home_scene'}>
-                <color attach='background' args={'#000'} />
-                <ambientLight />
-                <PerspectiveCamera
-                    ref={camera}
-                    canvasID={'home_scene'}
-                    position={[0, 0, -3]}
-                    positionZ={10}
-                />
-                <Cube
-                    position={[0, 0, 0]}
-                    size={[1, 1, 1]}
-                />
-            </Canvas>
+            <HomeController />
+            <Scene />
         </>
     )
 }

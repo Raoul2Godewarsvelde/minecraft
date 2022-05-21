@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react'
 
+import { useHomeStore } from '@hooks/useHomeStore'
+
 /* import { useFrame } from '@react-three/fiber' */
 
 const Cube = ({ position, size, ...props }) => {
@@ -12,6 +14,12 @@ const Cube = ({ position, size, ...props }) => {
 
     const [hovered, hover] = useState(false)
     const [clicked, click] = useState(false)
+
+    // HOOKS
+
+    const [width] = useHomeStore((state) => [
+        state.width
+    ])
     
     /* useFrame((state, delta) => (ref.current.rotation.x += 0.01)) */
     
@@ -40,7 +48,7 @@ const Cube = ({ position, size, ...props }) => {
                 ref={cube}
                 psoition={position}
             >
-                <boxGeometry attach='geometry' args={size} />
+                <boxGeometry attach='geometry' args={[1, width, 1]} />
                 <meshStandardMaterial attach='material' color='hotpink' />
             </mesh>
         </>

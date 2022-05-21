@@ -5,7 +5,9 @@ import { Home } from '@components/Home/Registration/index'
 const index = () => {
 
     return (
-        <Home />
+        <>
+            <Home />
+        </>
     )
 }
 
