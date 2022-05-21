@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react'
 
-import { useFrame } from '@react-three/fiber'
+/* import { useFrame } from '@react-three/fiber' */
 
 const Cube = ({ position, size, ...props }) => {
 
     // REF
 
-    const ref = useRef()
+    const cube = useRef()
 
     // STATES
 
@@ -37,7 +37,7 @@ const Cube = ({ position, size, ...props }) => {
             </mesh> */}
             <mesh
                 {...props}
-                ref={ref}
+                ref={cube}
                 psoition={position}
             >
                 <boxGeometry attach='geometry' args={size} />
