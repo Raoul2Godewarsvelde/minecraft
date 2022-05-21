@@ -4,16 +4,16 @@ import { Physics } from '@react-three/cannon'
 
 import { nanoid } from 'nanoid'
 
-import { useStore } from './Hooks/useStore'
-import { useInterval } from './Hooks/useInterval'
+import { useStore } from '@hooks/useStore'
+import { useInterval } from '@hooks/useInterval'
 
-import Player from './Components/Player'
-import Box from './Components/Box'
-import Cube from './Components/Cube'
-import Ground from './Components/Ground'
+import Player from '@components/Player'
+import Box from '@components/Box'
+import Cube from '@components/Cube'
+import Ground from '@components/Ground'
 
-import TestShader from './Components/Shaders/TestShader'
-import TextureShader from './Components/Shaders/TextureShader'
+import Texture2DShader from '@components/Shaders/Texture2DShader'
+import TextureShader from '@components/Shaders/TextureShader'
 
 import './App.scss'
 
@@ -59,7 +59,7 @@ const App = () => {
           <Ground position={[0, 0.5, 0]} />
 
           {/* CREATING EARTH + ADDING CITIES TO A PLANET */}
-          <TestShader />
+          <Texture2DShader />
           <TextureShader />
         </Physics>
       </Canvas>
