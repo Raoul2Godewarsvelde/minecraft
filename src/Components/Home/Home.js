@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { Scene } from '@components/Home/Registration/index'
 
