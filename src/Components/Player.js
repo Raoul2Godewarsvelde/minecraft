@@ -6,7 +6,7 @@ import { useThree, useFrame } from '@react-three/fiber'
 
 import { FPVControls } from './FPVControls'
 
-import usePlayerControls from '../Hooks/usePlayerControls'
+import usePlayerControls from '@hooks/usePlayerControls'
 
 const SPEED = 5
 

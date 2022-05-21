@@ -3,13 +3,13 @@ import React, { useMemo } from 'react'
 import * as THREE from 'three'
 import { useLoader } from '@react-three/fiber'
 
-/* import ListImages from '../../Json/ListImages' */
+/* import ListImages from '@json/ListImages' */
 
-import raoul from '../../Assets/Textures/raoul_profil_1.png'
+import raoul from '@assets/Textures/raoul_profil_1.png'
 
-import testMaterial from '../../scene/material/TestMaterial'
+import texture2DMaterial from '@scene/material/Texture2DMaterial'
 
-const TestShader = () => {
+const Texture2DShader = () => {
     
   /* const images = useLoader(
       THREE.TextureLoader,
@@ -36,7 +36,7 @@ const TestShader = () => {
             attach='geometry'
             args={[10, 10, 1, 1]}
         />
-        <testMaterial
+        <texture2DMaterial
             attach='material'
             side={THREE.DoubleSide}
             /* uTexture={images[0]} */
@@ -47,4 +47,4 @@ const TestShader = () => {
   )
 }
 
-export default TestShader
+export default Texture2DShader

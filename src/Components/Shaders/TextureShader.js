@@ -3,9 +3,9 @@ import React, { useMemo } from 'react'
 import * as THREE from 'three'
 import { useLoader } from '@react-three/fiber'
 
-import ListImages from '../../Json/ListImages'
+import ListImages from '@json/ListImages'
 
-import textureMaterial from '../../scene/material/TextureMaterial'
+import textureMaterial from '@scene/material/TextureMaterial'
 
 const TextureShader = () => {
     

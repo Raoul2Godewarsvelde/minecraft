@@ -4,7 +4,7 @@ import { shaderMaterial } from '@react-three/drei'
 
 import glsl from 'babel-plugin-glsl/macro'
 
-const TestMaterial = shaderMaterial(
+const Texture2DMaterial = shaderMaterial(
   {
     uResolution: new THREE.Vector2(),
     uTexture: new THREE.Texture()
@@ -27,4 +27,4 @@ const TestMaterial = shaderMaterial(
   `
 )
 
-extend({ TestMaterial })
+extend({ Texture2DMaterial })

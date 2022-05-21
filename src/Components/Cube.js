@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { useBox } from '@react-three/cannon'
 
-import { useStore } from '../Hooks/useStore'
+import { useStore } from '@hooks/useStore'
 
 import * as textures from '../textures'
 

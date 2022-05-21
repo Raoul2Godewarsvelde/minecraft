@@ -3,9 +3,9 @@ import React from 'react'
 import { TextureLoader, RepeatWrapping } from 'three'
 import { usePlane } from '@react-three/cannon'
 
-import { useStore } from '../Hooks/useStore'
+import { useStore } from '@hooks/useStore'
 
-import grass from '../Assets/Textures/grass.jpeg'
+import grass from '@assets/Textures/grass.jpeg'
 
 const Ground = (props) => {
 
