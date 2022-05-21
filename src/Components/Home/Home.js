@@ -2,6 +2,8 @@ import React, { createRef } from 'react'
 
 import { Canvas } from '@react-three/fiber'
 
+import { GUI } from 'dat.gui'
+
 import { PerspectiveCamera } from '@components/Cameras/Registration/index'
 
 import { Cube } from '@components/Meshes/Primitives/Registration/index'
@@ -29,3 +31,8 @@ const Home = () => {
 }
 
 export default Home
+
+// EFFECTS
+
+// Persistence
+// https://codepen.io/gbnikolov/pen/OJxmojd
