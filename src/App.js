@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 
 import Home from '@pages/Home/index'
@@ -10,10 +12,14 @@ import './App.scss'
 
 const App = () => {
 
+  // STATES
+
+  const [mySmallWorldActivated, setMySmallWorldActivated] = useState()
+
   return (
     <>
       <Router>
-        <Header />
+        <Header setMySmallWorldActivated={setMySmallWorldActivated} />
 
         <Routes>
           <Route path='/' element={<Home />} />
