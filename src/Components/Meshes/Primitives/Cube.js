@@ -17,8 +17,10 @@ const Cube = ({ position, size, ...props }) => {
 
     // HOOKS
 
-    const [width] = useHomeStore((state) => [
-        state.width
+    const [width, height, depth] = useHomeStore((state) => [
+        state.width,
+        state.height,
+        state.depth
     ])
     
     /* useFrame((state, delta) => (ref.current.rotation.x += 0.01)) */
@@ -48,7 +50,7 @@ const Cube = ({ position, size, ...props }) => {
                 ref={cube}
                 psoition={position}
             >
-                <boxGeometry attach='geometry' args={[1, width, 1]} />
+                <boxGeometry attach='geometry' args={[width, height, depth]} />
                 <meshStandardMaterial attach='material' color='hotpink' />
             </mesh>
         </>
