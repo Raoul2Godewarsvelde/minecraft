@@ -12,6 +12,7 @@ const Camera = forwardRef(({ canvasID, position, ...props }, ref) => {
     })
 
     const canvas = document.getElementById(canvasID)
+
     let canvasWidth = canvas.offsetWidth
     let canvasHeight = canvas.offsetHeight
 
@@ -19,7 +20,7 @@ const Camera = forwardRef(({ canvasID, position, ...props }, ref) => {
         canvasWidth = canvas.offsetWidth
         canvasHeight = canvas.offsetHeight
         ref.current.aspect = canvasWidth / canvasHeight
-        ref.current.fov = 2 * Math.atan((canvasHeight / 2) / position.z) * (180 / Math.PI)
+        /* ref.current.fov = 2 * Math.atan((canvasHeight / 2) / props.position.z) * (180 / Math.PI) */
     })
 
     return (
@@ -30,7 +31,7 @@ const Camera = forwardRef(({ canvasID, position, ...props }, ref) => {
                 ref={ref}
                 position={position}
                 aspect={canvasWidth / canvasHeight}
-                fov={2 * Math.atan((canvasHeight / 2) / position.z) * (180 / Math.PI)}
+                /* fov={2 * Math.atan((canvasHeight / 2) / position.z) * (180 / Math.PI)} */
                 onUpdate={self => self.updateProjectionMatrix()}
             />
             <OrbitControls
