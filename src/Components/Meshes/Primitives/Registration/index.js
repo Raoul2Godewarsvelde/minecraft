@@ -1,5 +1,9 @@
 import Cube from '../Cube'
+import Plane from '../Plane'
+import Sphere from '../Sphere'
 
 export {
-    Cube
+    Cube,
+    Plane,
+    Sphere
 }

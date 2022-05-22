@@ -1,14 +1,14 @@
 import create from 'zustand'
 
-export const useCubeStore = create((set) => ({
+export const useSphereStore = create((set) => ({
     controlled_position: {x: 0, y: 0, z: 0},
     controlled_setPosition: (controlled_position) => set((state) => ({ controlled_position: ({ x: controlled_position.x, y: controlled_position.y, z: controlled_position.z }) })),
 
-    controlled_size: {x: 1, y: 1, z: 1},
-    controlled_setSize: (controlled_size) => set((state) => ({ controlled_size: ({ x: controlled_size.x, y: controlled_size.y, z: controlled_size.z }) })),
+    controlled_radius: 1,
+    controlled_setRadius: (controlled_radius) => set((state) => ({ controlled_radius: controlled_radius })),
 
-    controlled_segments: {x: 1, y: 1, z: 1},
-    controlled_setSegments: (controlled_segments) => set((state) => ({ controlled_segments: ({ x: controlled_segments.x, y: controlled_segments.y, z: controlled_segments.z }) })),
+    controlled_segments: {lat: 12, long: 12},
+    controlled_setSegments: (controlled_segments) => set((state) => ({ controlled_segments: ({ lat: controlled_segments.lat, long: controlled_segments.long }) })),
 
     controlled_scale: {x: 1, y: 1, z: 1},
     controlled_setScale: (controlled_scale) => set((state) => ({ controlled_scale: ({ x: controlled_scale.x, y: controlled_scale.y, z: controlled_scale.z }) })),
