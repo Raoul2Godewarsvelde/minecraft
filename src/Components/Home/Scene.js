@@ -13,12 +13,12 @@ const Scene = () => {
     const camera = createRef()
 
     return (
-        <Canvas id={'home_scene'}>
+        <Canvas id={'home__canvas'}>
             <color attach='background' args={'#000'} />
             <ambientLight />
             <PerspectiveCamera
                 ref={camera}
-                canvasID={'home_scene'}
+                canvasID={'home__canvas'}
                 position={[0, 0, -3]}
                 positionZ={10}
             />

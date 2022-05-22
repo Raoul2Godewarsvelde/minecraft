@@ -22,7 +22,7 @@ const HomeController = () => {
     ])
 
     return (
-        <div>
+        <div id='home__controller'>
             <Range name={'width'} label={'X'} value={width} min={0} max={10} step={0.1} handleChange={handleWidth} />
             <Range name={'height'} label={'Y'} value={height} min={0} max={10} step={0.1} handleChange={handleHeight} />
             <Range name={'depth'} label={'Z'} value={depth} min={0} max={10} step={0.1} handleChange={handleDepth} />

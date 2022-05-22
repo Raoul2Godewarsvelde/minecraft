@@ -7,10 +7,10 @@ import { HomeController } from '@components/Controllers/Registration/index'
 const Home = () => {
 
     return (
-        <>
+        <div id='home__wrapper'>
             <HomeController />
             <Scene />
-        </>
+        </div>
     )
 }
 

@@ -7,6 +7,7 @@ import '@styles/Components/header.scss'
 const Header = ({ setMySmallWorldActivated }) => {
 
     return (
+      <header>
         <nav>
           <ul>
             <li>
@@ -27,6 +28,7 @@ const Header = ({ setMySmallWorldActivated }) => {
             </li>
           </ul>
         </nav>
+      </header>
     )
 }
 

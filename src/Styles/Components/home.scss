@@ -1,0 +1,25 @@
+#home__wrapper {
+    z-index: 0;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+
+    #home__controller {
+        z-index: 2;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background-color: #0004;
+    }
+
+    #home__canvas {
+        z-index: 1;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+    }
+}
