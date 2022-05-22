@@ -2,9 +2,10 @@ import React, { useRef, useState } from 'react'
 
 import { useFrame } from '@react-three/fiber'
 
+import { useSceneStore } from '@hooks/useSceneStore'
 import { useCubeStore } from '@hooks/useCubeStore'
 
-const Cube = ({ key, controlled, position, rotation, scale, size, segments, wireframe, color, opacity }) => {
+const Cube = ({ key, name, controlled, position, rotation, scale, size, segments, wireframe, color, opacity }) => {
 
     // REF
 
@@ -12,10 +13,17 @@ const Cube = ({ key, controlled, position, rotation, scale, size, segments, wire
 
     // STATES
 
-    const [hovered, setHover] = useState(false)
-    const [clicked, setClick] = useState(false)
+    const [hovered, setHovered] = useState(false)
 
     // HOOKS
+
+    const [
+        objectSelected,
+        setObjectSelected
+    ] = useSceneStore((state) => [
+        state.objectSelected,
+        state.setObjectSelected
+    ])
 
     const [
         controlled_position,
@@ -42,18 +50,26 @@ const Cube = ({ key, controlled, position, rotation, scale, size, segments, wire
     useFrame((state, delta) => {
         /* cube.current.rotation.x += rotation_x */
     })
+
+    // HANDLE CLICK
+
+    const handleClick = (e) => {
+        setObjectSelected(e.object.name)
+    } 
     
     return (
         <mesh
             key={key}
+            name={name}
+
             ref={cube}
+
             position={controlled ? [controlled_position.x, controlled_position.y, controlled_position.z] : position ? [position.x, position.y, position.z] : [0, 0, 0]}
             rotation={controlled ? [controlled_rotation.x, controlled_rotation.y, controlled_rotation.z] : rotation ? [rotation.x, rotation.y, rotation.z] : [0, 0, 0]}
             scale={controlled ? [controlled_scale.x, controlled_scale.y, controlled_scale.z] : scale ? [scale.x, scale.y, scale.z] : [1, 1, 1]}
-            /* scale={clicked ? 1.5 : 1} */
-            /* onClick={(e) => setClick(!clicked)} */
-            /* onPointerOver={(e) => setHover(true)} */
-            /* onPointerOut={(e) => setHover(false)} */
+
+            onClick={handleClick}
+            
         >
             <boxBufferGeometry
                 attach='geometry'
@@ -63,7 +79,7 @@ const Cube = ({ key, controlled, position, rotation, scale, size, segments, wire
                 attach='material'
                 wireframe={controlled ? controlled_wireframe : wireframe ? wireframe : false}
                 transparent
-                color={controlled ? controlled_color : color ? color : '#ffffff'}
+                color={objectSelected === name ? '#ff0000' : controlled ? controlled_color : color ? color : '#ffffff'}
                 opacity={controlled ? controlled_opacity : opacity ? opacity : 1}
             />
         </mesh>
