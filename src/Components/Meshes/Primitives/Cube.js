@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber'
 
 import { useCubeStore } from '@hooks/useCubeStore'
 
-const Cube = ({ controlled, position, rotation, scale, size, segments, wireframe, opacity }) => {
+const Cube = ({ key, controlled, position, rotation, scale, size, segments, wireframe, color, opacity }) => {
 
     // REF
 
@@ -17,14 +17,24 @@ const Cube = ({ controlled, position, rotation, scale, size, segments, wireframe
 
     // HOOKS
 
-    const [controlled_position, controlled_size, controlled_segments, controlled_scale, controlled_rotation, controlled_opacity, controlled_wireframe] = useCubeStore((state) => [
+    const [
+        controlled_position,
+        controlled_scale,
+        controlled_rotation,
+        controlled_size,
+        controlled_segments,
+        controlled_wireframe,
+        controlled_color,
+        controlled_opacity
+    ] = useCubeStore((state) => [
         state.controlled_position,
-        state.controlled_size,
-        state.controlled_segments,
         state.controlled_scale,
         state.controlled_rotation,
-        state.controlled_opacity,
-        state.controlled_wireframe
+        state.controlled_size,
+        state.controlled_segments,
+        state.controlled_wireframe,
+        state.controlled_color,
+        state.controlled_opacity
     ])
 
     // USE FRAME
@@ -35,6 +45,8 @@ const Cube = ({ controlled, position, rotation, scale, size, segments, wireframe
     
     return (
         <mesh
+            id={key}
+            key={key}
             ref={cube}
             position={controlled ? [controlled_position.x, controlled_position.y, controlled_position.z] : position ? [position.x, position.y, position.z] : [0, 0, 0]}
             rotation={controlled ? [controlled_rotation.x, controlled_rotation.y, controlled_rotation.z] : rotation ? [rotation.x, rotation.y, rotation.z] : [0, 0, 0]}
@@ -52,7 +64,7 @@ const Cube = ({ controlled, position, rotation, scale, size, segments, wireframe
                 attach='material'
                 wireframe={controlled ? controlled_wireframe : wireframe ? wireframe : false}
                 transparent
-                color={!hovered ? '#fff' : '#f00'}
+                color={controlled ? controlled_color : color ? color : '#ffffff'}
                 opacity={controlled ? controlled_opacity : opacity ? opacity : 1}
             />
         </mesh>

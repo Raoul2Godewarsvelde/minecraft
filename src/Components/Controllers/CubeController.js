@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useCubeStore } from '@hooks/useCubeStore'
 
-import { CheckBox, Range } from '@components/Inputs/Registration/index'
+import { CheckBox, Color, Range } from '@components/Inputs/Registration/index'
 
 const CubeController = () => {
 
@@ -14,8 +14,9 @@ const CubeController = () => {
         controlled_segments, controlled_setSegments,
         controlled_scale, controlled_setScale,
         controlled_rotation, controlled_setRotation,
-        controlled_opacity, controlled_setOpacity,
-        controlled_wireframe, controlled_setWireframe
+        controlled_wireframe, controlled_setWireframe,
+        controlled_color, controlled_setColor,
+        controlled_opacity, controlled_setOpacity
     ] = useCubeStore((state) => [
         state.controlled_position,
         state.controlled_setPosition,
@@ -27,10 +28,12 @@ const CubeController = () => {
         state.controlled_setScale,
         state.controlled_rotation,
         state.controlled_setRotation,
-        state.controlled_opcaity,
-        state.controlled_setOpacity,
         state.controlled_wireframe,
-        state.controlled_setWireframe
+        state.controlled_setWireframe,
+        state.controlled_color,
+        state.controlled_setColor,
+        state.controlled_opacity,
+        state.controlled_setOpacity,
     ])
 
     return (
@@ -59,6 +62,9 @@ const CubeController = () => {
             <Range rangeType={'object'} name={'x'} label={'X'} value={controlled_rotation.x} min={-Math.PI} max={Math.PI} step={Math.PI / 360} state={controlled_rotation} setState={controlled_setRotation} color={'#fff'} />
             <Range rangeType={'object'} name={'y'} label={'Y'} value={controlled_rotation.y} min={-Math.PI} max={Math.PI} step={Math.PI / 360} state={controlled_rotation} setState={controlled_setRotation} color={'#fff'} />
             <Range rangeType={'object'} name={'z'} label={'Z'} value={controlled_rotation.z} min={-Math.PI} max={Math.PI} step={Math.PI / 360} state={controlled_rotation} setState={controlled_setRotation} color={'#fff'} />
+
+            <p style={{color: '#fff'}}>Color</p>
+            <Color name={'controlled_color'} label={'Color'} value={controlled_color} state={controlled_color} setState={controlled_setColor} />
 
             <p style={{color: '#fff'}}>Opacity</p>
             <Range rangeType={'value'} value={controlled_opacity} min={0} max={1} step={0.01} state={controlled_opacity} setState={controlled_setOpacity} />
