@@ -1,5 +1,5 @@
-import HomeController from '../HomeController'
+import CubeController from '../CubeController'
 
 export {
-    HomeController
+    CubeController
 }

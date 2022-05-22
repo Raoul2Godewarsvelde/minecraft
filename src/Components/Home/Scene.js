@@ -19,12 +19,11 @@ const Scene = () => {
             <PerspectiveCamera
                 ref={camera}
                 canvasID={'home__canvas'}
-                position={[0, 0, -3]}
+                position={[2, 2, -3]}
                 positionZ={10}
             />
             <Cube
                 position={[0, 0, 0]}
-                size={[1, 1, 1]}
             />
         </Canvas>
     )

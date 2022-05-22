@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react'
 
-import { useHomeStore } from '@hooks/useHomeStore'
+import { useCubeStore } from '@hooks/useCubeStore'
 
 import { useFrame } from '@react-three/fiber'
 
-const Cube = ({ position, size, ...props }) => {
+const Cube = ({ position, ...props }) => {
 
     // REF
 
@@ -17,16 +17,14 @@ const Cube = ({ position, size, ...props }) => {
 
     // HOOKS
 
-    const [width, height, depth, rotation_x, opacity] = useHomeStore((state) => [
-        state.width,
-        state.height,
-        state.depth,
-        state.rotation_x,
+    const [size, rotation, opacity] = useCubeStore((state) => [
+        state.size,
+        state.rotation,
         state.opacity
     ])
     
     useFrame((state, delta) => {
-        cube.current.rotation.x += rotation_x
+        /* cube.current.rotation.x += rotation_x */
     })
     
     return (
@@ -34,15 +32,16 @@ const Cube = ({ position, size, ...props }) => {
             <mesh
                 {...props}
                 ref={cube}
-                psoition={position}
-                scale={clicked ? 1.5 : 1}
-                onClick={(e) => setClick(!clicked)}
-                onPointerOver={(e) => setHover(true)}
-                onPointerOut={(e) => setHover(false)}
+                position={position}
+                rotation={[rotation.x, rotation.y, rotation.z]}
+                /* scale={clicked ? 1.5 : 1} */
+                /* onClick={(e) => setClick(!clicked)} */
+                /* onPointerOver={(e) => setHover(true)} */
+                /* onPointerOut={(e) => setHover(false)} */
             >
                 <boxGeometry
                     attach='geometry'
-                    args={[width, height, depth]}
+                    args={[size.x, size.y, size.z]}
                 />
                 <meshStandardMaterial
                     attach='material'

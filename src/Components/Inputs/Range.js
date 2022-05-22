@@ -1,6 +1,27 @@
 import React from 'react'
 
-const Range = ({ name, label, value, min, max, step, handleChange }) => {
+const Range = ({ rangeType, name, label, value, min, max, step, state, setState, color }) => {
+
+    // RANGE TYPE
+
+    let handleChange
+
+    switch(rangeType) {
+        case 'value':
+            handleChange = (e) => {
+                setState(e.target.value)
+            }
+            break
+        case 'object':
+            handleChange = (e) => {
+                const state_copy = state
+                state_copy[name] = e.target.value
+                setState(state_copy)
+            }
+            break
+        default:
+            break
+    }
 
     return (
         <div
@@ -11,6 +32,7 @@ const Range = ({ name, label, value, min, max, step, handleChange }) => {
             }}
         >
             <label
+                style={{color: color}}
                 htmlFor='volume'
             >
                 {label}
@@ -23,7 +45,7 @@ const Range = ({ name, label, value, min, max, step, handleChange }) => {
                 max={max}
                 step={step}
                 value={value}
-                onChange={(e) => handleChange(e.target.value)}
+                onChange={(e) => handleChange(e)}
             />
         </div>
     )
