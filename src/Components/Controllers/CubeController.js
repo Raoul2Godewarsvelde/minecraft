@@ -33,7 +33,7 @@ const CubeController = () => {
         state.controlled_color,
         state.controlled_setColor,
         state.controlled_opacity,
-        state.controlled_setOpacity,
+        state.controlled_setOpacity
     ])
 
     return (

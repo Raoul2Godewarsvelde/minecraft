@@ -56,8 +56,8 @@ const Scene = () => {
                     <Cube key={nanoid()} position={cube.position} rotation={{x: 0, y: 0, z: 0}} scale={{x: 1, y: 1, z: 1}} size={{x: 1, y: 1, z: 1}} segments={{x: 1, y: 1, z: 1}} wireframe={false} color={cube.color} opacity={1} />
                 ))}
                 
-                {/* <Cube key={nanoid()} controlled={true} />
-                <Cube key={nanoid()} position={{x: 1, y: 1, z: 1}} rotation={{x: 0, y: 3, z: 0}} scale={{x: 1, y: 1, z: 1}} size={{x: 1, y: 1, z: 1}} segments={{x: 1, y: 1, z: 1}} wireframe={false} opacity={1} />
+                <Cube key={nanoid()} controlled={true} />
+                {/* <Cube key={nanoid()} position={{x: 1, y: 1, z: 1}} rotation={{x: 0, y: 3, z: 0}} scale={{x: 1, y: 1, z: 1}} size={{x: 1, y: 1, z: 1}} segments={{x: 1, y: 1, z: 1}} wireframe={false} opacity={1} />
                 <Cube key={nanoid()} position={{x: 1, y: 3, z: 1}} color={'#00ffff'} /> */}
 
                 {/* <Plane position={{x: 0, y: 2, z: 0}} rotation={{x: 0, y: 0, z: 0}} scale={{x:1, y:1}} size={{x: 10, y: 10}} segments={{x: 10, y: 10}} wireframe={false} opacity={1} /> */}
