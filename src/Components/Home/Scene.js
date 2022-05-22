@@ -6,6 +6,7 @@ import { nanoid } from 'nanoid'
 
 import { useEnvironmentStore } from '@hooks/useEnvironmentStore'
 import { useSceneStore } from '@hooks/useSceneStore'
+import { useInterval } from '@hooks/useInterval'
 
 import { Grid } from '@components/Helpers/Registration/index'
 
@@ -25,9 +26,17 @@ const Scene = () => {
         state.controlled_color
     ])
 
-    const [cubes] = useSceneStore((state) => [
+    const [cubes, saveWorld] = useSceneStore((state) => [
       state.cubes,
+      state.saveWorld
     ])
+
+    // SAVE WORLD
+  
+    useInterval(() => {
+      saveWorld(cubes)
+      console.log('saved')
+    }, 10000)
 
     return (
         <Canvas id={'home__canvas'} style={{background: controlled_color}}>
@@ -39,17 +48,17 @@ const Scene = () => {
                 <PerspectiveCamera
                     ref={camera}
                     canvasID={'home__canvas'}
-                    position={[2, 2, -3]}
+                    position={[10, 10, -10]}
                     positionZ={10}
                 />
 
                 {cubes.map((cube) => (
-                    <Cube key={nanoid()} position={cube.position} color={cube.color} />
+                    <Cube key={nanoid()} position={cube.position} rotation={{x: 0, y: 0, z: 0}} scale={{x: 1, y: 1, z: 1}} size={{x: 1, y: 1, z: 1}} segments={{x: 1, y: 1, z: 1}} wireframe={false} color={cube.color} opacity={1} />
                 ))}
                 
-                <Cube key={nanoid()} controlled={true} />
+                {/* <Cube key={nanoid()} controlled={true} />
                 <Cube key={nanoid()} position={{x: 1, y: 1, z: 1}} rotation={{x: 0, y: 3, z: 0}} scale={{x: 1, y: 1, z: 1}} size={{x: 1, y: 1, z: 1}} segments={{x: 1, y: 1, z: 1}} wireframe={false} opacity={1} />
-                <Cube key={nanoid()} position={{x: 1, y: 3, z: 1}} />
+                <Cube key={nanoid()} position={{x: 1, y: 3, z: 1}} color={'#00ffff'} /> */}
 
                 {/* <Plane position={{x: 0, y: 2, z: 0}} rotation={{x: 0, y: 0, z: 0}} scale={{x:1, y:1}} size={{x: 10, y: 10}} segments={{x: 10, y: 10}} wireframe={false} opacity={1} /> */}
                 <Plane />

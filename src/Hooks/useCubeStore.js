@@ -1,6 +1,8 @@
 import create from 'zustand'
 
 export const useCubeStore = create((set) => ({
+    key: null,
+
     controlled_position: {x: 0, y: 0, z: 0},
     controlled_setPosition: (controlled_position) => set((state) => ({ controlled_position: ({ x: controlled_position.x, y: controlled_position.y, z: controlled_position.z }) })),
     

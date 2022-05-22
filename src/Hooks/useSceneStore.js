@@ -1,12 +1,19 @@
 import create from 'zustand'
 
 const getLocalStorage = (key) => JSON.parse(window.localStorage.getItem(key))
+const setLocalStorage = (key, value) => window.localStorage.setItem(key, JSON.stringify(value))
 
 export const useSceneStore = create((set) => ({
+    saveWorld: () => set((state) => {
+        console.log('cubes', state.cubes)
+        setLocalStorage('world', state.cubes)
+    }),
+
     cubes: getLocalStorage('world') || 
         [
-            { position: [-2, -2, -2], color: 'pink' }
+            /* { position: {x: -2, y: -2, z: -2}, color: '#ff00ff' } */
         ],
-    addCube: (x, y, z, color) => set((state) => ({ cubes: [...state.cubes, { position: [x, y, z], color }] })),
-    color: '#ffffff'
+    addCube: (x, y, z, color) => set((state) => ({ cubes: [...state.cubes, { position: {x: 0, y: 0, z: 0}, color: '#ffff00' }] })),
+
+    color: '#00ffff'
 }))

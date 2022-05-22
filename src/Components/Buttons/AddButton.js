@@ -1,9 +1,14 @@
 import React from 'react'
 
-const AddButton = () => {
-    
+const AddButton = ({ setState }) => {
+
     return (
-        <div>AddButton</div>
+        <button
+            type='button'
+            onClick={setState}
+        >
+            +
+        </button>
     )
 }
 

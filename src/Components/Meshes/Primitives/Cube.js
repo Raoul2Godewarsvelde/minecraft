@@ -45,7 +45,6 @@ const Cube = ({ key, controlled, position, rotation, scale, size, segments, wire
     
     return (
         <mesh
-            id={key}
             key={key}
             ref={cube}
             position={controlled ? [controlled_position.x, controlled_position.y, controlled_position.z] : position ? [position.x, position.y, position.z] : [0, 0, 0]}
