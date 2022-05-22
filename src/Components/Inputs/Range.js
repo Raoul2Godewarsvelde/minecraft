@@ -27,16 +27,18 @@ const Range = ({ rangeType, name, label, value, min, max, step, state, setState,
         <div
             style={{
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: 'row',
                 width: '300px'
             }}
         >
-            <label
-                style={{color: color}}
-                htmlFor='volume'
-            >
-                {label}
-            </label>
+            {label && (
+                <label
+                    style={{color: color}}
+                    htmlFor={name}
+                >
+                    {label}
+                </label>
+            )}
             <input
                 id={name}
                 type='range'

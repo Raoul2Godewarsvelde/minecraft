@@ -4,7 +4,7 @@ import { useCubeStore } from '@hooks/useCubeStore'
 
 import { useFrame } from '@react-three/fiber'
 
-const Cube = ({ position, ...props }) => {
+const Cube = () => {
 
     // REF
 
@@ -17,10 +17,14 @@ const Cube = ({ position, ...props }) => {
 
     // HOOKS
 
-    const [size, rotation, opacity] = useCubeStore((state) => [
+    const [position, size, segments, scale, rotation, opacity, wireframe] = useCubeStore((state) => [
+        state.position,
         state.size,
+        state.segments,
+        state.scale,
         state.rotation,
-        state.opacity
+        state.opacity,
+        state.wireframe
     ])
     
     useFrame((state, delta) => {
@@ -30,10 +34,10 @@ const Cube = ({ position, ...props }) => {
     return (
         <>
             <mesh
-                {...props}
                 ref={cube}
-                position={position}
+                position={[position.x, position.y, position.z]}
                 rotation={[rotation.x, rotation.y, rotation.z]}
+                scale={[scale.x, scale.y, scale.z]}
                 /* scale={clicked ? 1.5 : 1} */
                 /* onClick={(e) => setClick(!clicked)} */
                 /* onPointerOver={(e) => setHover(true)} */
@@ -41,12 +45,13 @@ const Cube = ({ position, ...props }) => {
             >
                 <boxGeometry
                     attach='geometry'
-                    args={[size.x, size.y, size.z]}
+                    args={[size.x, size.y, size.z, segments.x, segments.y, segments.z]}
                 />
                 <meshStandardMaterial
                     attach='material'
                     color={!hovered ? '#fff' : '#f00'}
                     transparent
+                    wireframe={wireframe}
                     opacity={opacity}
                 />
             </mesh>
