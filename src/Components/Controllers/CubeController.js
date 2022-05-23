@@ -70,7 +70,7 @@ const CubeController = () => {
             <Range rangeType={'value'} value={controlled_opacity} min={0} max={1} step={0.01} state={controlled_opacity} setState={controlled_setOpacity} />
 
             <p style={{color: '#fff'}}>Wireframe</p>
-            <CheckBox name={controlled_wireframe} value={controlled_wireframe} setState={controlled_setWireframe} color={'#fff'} />
+            <CheckBox name={controlled_wireframe} value={controlled_wireframe} setState={controlled_setWireframe} />
         </div>
     )
 }

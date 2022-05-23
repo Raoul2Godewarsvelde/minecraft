@@ -1,0 +1,98 @@
+// INTERFACE
+
+.panel__wrappers {
+
+    position: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 5px;
+
+    font-family: RobotoRegular;
+
+    color: var(--color);
+    background-color: var(--background-color);
+    
+    border-radius: var(--border-radius);
+
+    .title_panel {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h1 {
+        
+            margin-top: 0px; /* TODO: Remove adjustment */
+            margin-bottom: 0px; /* TODO: Remove adjustment */
+            padding: 5px;
+            
+            background-color: var(--background-color);
+
+            border-radius: var(--border-radius);
+
+            box-shadow: -3px -3px 7px var(--box-shadow-color-1), 3px 3px 5px var(--box-shadow-color-2);
+
+            font-size: 14px;
+
+            cursor: grab;
+        }
+
+        .close_panel {
+
+            cursor: pointer;
+        }
+    }
+
+    .controller__wrappers {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* justify-content: center; */
+        
+        margin-top: 3px;
+        padding: 3px;
+
+        background-color: var(--background-color);
+    
+        border-radius: var(--border-radius);
+    
+        box-shadow: inset -3px -3px 7px var(--box-shadow-color-1), inset 3px 3px 5px var(--box-shadow-color-2);
+
+        h1 {
+        
+            margin-top: 0px; /* TODO: Remove adjustment */
+            margin-bottom: 0px; /* TODO: Remove adjustment */
+            padding: 5px;
+            
+            background-color: var(--background-color);
+    
+            border-radius: var(--border-radius);
+    
+            box-shadow: -3px -3px 7px var(--box-shadow-color-1), 3px 3px 5px var(--box-shadow-color-2);
+
+            font-size: 14px;
+
+            cursor: pointer;
+        }
+
+        .input__wrapper {
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            margin-top: 3px;
+
+            label {
+
+                padding-left: 3px;
+
+                font-size: 10px;
+            }
+        }
+    }
+}

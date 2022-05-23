@@ -1,23 +1,11 @@
 import React from 'react'
 
-const Color = ({ name, label, value, setState, color }) => {
+const Color = ({ name, label, value, setState }) => {
 
     return (
         <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                width: '300px'
-            }}
+            className='input__wrapper'
         >
-            {label && (
-                <label
-                    style={{color: color}}
-                    htmlFor={name}
-                >
-                    {label}
-                </label>
-            )}
             <input
                 id={name}
                 type='color'
@@ -25,6 +13,13 @@ const Color = ({ name, label, value, setState, color }) => {
                 value={value}
                 onChange={(e) => setState(e.target.value)}
             />
+            {label && (
+                <label
+                    htmlFor={name}
+                >
+                    {label}
+                </label>
+            )}
         </div>
     )
 }

@@ -22,8 +22,8 @@ const Scene = () => {
 
     // HOOKS
 
-    const [controlled_color] = useEnvironmentStore((state) => [
-        state.controlled_color
+    const [color] = useEnvironmentStore((state) => [
+        state.color
     ])
 
     const [cubes, saveWorld] = useSceneStore((state) => [
@@ -39,7 +39,7 @@ const Scene = () => {
     }, 10000)
 
     return (
-        <Canvas id={'home__canvas'} style={{background: controlled_color}}>
+        <Canvas id={'home__canvas'} style={{background: color}}>
             <Suspense fallback={null}>
                 {/* <Grid /> */}
 

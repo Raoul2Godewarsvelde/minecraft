@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Range = ({ rangeType, name, label, value, min, max, step, state, setState, color }) => {
+const Range = ({ rangeType, name, label, value, min, max, step, state, setState }) => {
 
     // RANGE TYPE
 
@@ -25,20 +25,8 @@ const Range = ({ rangeType, name, label, value, min, max, step, state, setState,
 
     return (
         <div
-            style={{
-                display: 'flex',
-                flexDirection: 'row',
-                width: '300px'
-            }}
+            className='input__wrapper'
         >
-            {label && (
-                <label
-                    style={{color: color}}
-                    htmlFor={name}
-                >
-                    {label}
-                </label>
-            )}
             <input
                 id={name}
                 type='range'
@@ -49,6 +37,13 @@ const Range = ({ rangeType, name, label, value, min, max, step, state, setState,
                 value={value}
                 onChange={(e) => handleChange(e)}
             />
+            {label && (
+                <label
+                    htmlFor={name}
+                >
+                    {label}
+                </label>
+            )}
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CheckBox = ({ name, label, value, setState, color }) => {
+const CheckBox = ({ name, label, value, setState }) => {
 
     return (
         <div
@@ -12,7 +12,6 @@ const CheckBox = ({ name, label, value, setState, color }) => {
         >
             {label && (
                 <label
-                    style={{color: color}}
                     htmlFor={name}
                 >
                     {label}
