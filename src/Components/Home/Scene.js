@@ -53,18 +53,18 @@ const Scene = () => {
                 />
 
                 {cubes.map((cube, index) => (
-                    <Cube id={nanoid()} key={index} name={cube.state.name} position={cube.state.transform.position} rotation={{x: 0, y: 0, z: 0}} scale={{x: 1, y: 1, z: 1}} size={{x: 1, y: 1, z: 1}} segments={{x: 1, y: 1, z: 1}} wireframe={false} color={cube.state.material.color} opacity={1} />
+                    <Cube id={nanoid()} /* key={index} */ name={cube.state.name} position={cube.state.transform.position} scale={cube.state.transform.scale} rotation={cube.state.transform.rotation} size={cube.state.geometry.size} segments={cube.state.geometry.segments} wireframe={cube.state.material.wireframe} color={cube.state.material.color} opacity={cube.state.material.opacity} />
                 ))}
                 
-                <Cube id={nanoid()} key={999} name={'cube_test_001'} position={{x: -2, y: -2, z: -2}} />
+                {/* <Cube id={nanoid()} key={999} name={'cube_test_001'} position={{x: -2, y: -2, z: -2}} />
                 <Cube id={nanoid()} key={998} name={'cube_test_002'} position={{x: 2, y: 2, z: 2}} />
-                <Cube id={nanoid()} key={997} name={'controlled_cube'} controlled />
+                <Cube id={nanoid()} key={997} name={'controlled_cube'} controlled /> */}
                 {/* <Cube key={nanoid()} position={{x: 1, y: 1, z: 1}} rotation={{x: 0, y: 3, z: 0}} scale={{x: 1, y: 1, z: 1}} size={{x: 1, y: 1, z: 1}} segments={{x: 1, y: 1, z: 1}} wireframe={false} opacity={1} />
                 <Cube key={nanoid()} position={{x: 1, y: 3, z: 1}} color={'#00ffff'} /> */}
 
                 {/* <Plane position={{x: 0, y: 2, z: 0}} rotation={{x: 0, y: 0, z: 0}} scale={{x:1, y:1}} size={{x: 10, y: 10}} segments={{x: 10, y: 10}} wireframe={false} opacity={1} /> */}
                 <Plane />
-                <Sphere position={{x: 3, y: 3, z: 3}} wireframe />
+                {/* <Sphere position={{x: 3, y: 3, z: 3}} wireframe /> */}
             </Suspense>
         </Canvas>
     )

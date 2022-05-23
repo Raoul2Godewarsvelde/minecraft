@@ -55,7 +55,7 @@ const Cube = ({ key, name, controlled, position, rotation, scale, size, segments
 
     const handleClick = (e) => {
         console.log(e)
-        setObjectSelected(e.object.uuid)
+        setObjectSelected(e.object.name)
     } 
     
     return (
@@ -70,7 +70,6 @@ const Cube = ({ key, name, controlled, position, rotation, scale, size, segments
             scale={controlled ? [controlled_scale.x, controlled_scale.y, controlled_scale.z] : scale ? [scale.x, scale.y, scale.z] : [1, 1, 1]}
 
             onClick={handleClick}
-            
         >
             <boxBufferGeometry
                 attach='geometry'

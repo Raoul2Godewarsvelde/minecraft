@@ -8,14 +8,25 @@ const AddPrimitiveController = () => {
 
     // HOOKS
 
-    const [addCube] = useSceneStore((state) => [
-        state.addCube
+    const [addCube, resetWorld] = useSceneStore((state) => [
+        state.addCube,
+        state.resetWorld
     ])
+
+    // ADD CUBE
+
+    /* const addCube = () => {
+
+    } */
+
+    // RETURN
+
     return (
         <>
             <h1>Add primitive</h1>
             <h2>Cube</h2>
             <AddButton setState={addCube} />
+            <AddButton setState={resetWorld} />
         </>
     )
 }
