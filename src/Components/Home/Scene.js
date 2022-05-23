@@ -26,17 +26,17 @@ const Scene = () => {
         state.controlled_color
     ])
 
-    const [cubes/* , saveWorld */] = useSceneStore((state) => [
+    const [cubes, saveWorld] = useSceneStore((state) => [
       state.cubes,
-      /* state.saveWorld */
+      state.saveWorld
     ])
 
     // SAVE WORLD
   
-    /* useInterval(() => {
+    useInterval(() => {
       saveWorld(cubes)
       console.log('saved')
-    }, 10000) */
+    }, 10000)
 
     return (
         <Canvas id={'home__canvas'} style={{background: controlled_color}}>
@@ -52,12 +52,13 @@ const Scene = () => {
                     positionZ={10}
                 />
 
-                {cubes.map((cube) => (
-                    <Cube key={nanoid()} name={cube.name} position={cube.position} rotation={{x: 0, y: 0, z: 0}} scale={{x: 1, y: 1, z: 1}} size={{x: 1, y: 1, z: 1}} segments={{x: 1, y: 1, z: 1}} wireframe={false} color={cube.color} opacity={1} />
+                {cubes.map((cube, index) => (
+                    <Cube id={nanoid()} key={index} name={cube.state.name} position={cube.state.transform.position} rotation={{x: 0, y: 0, z: 0}} scale={{x: 1, y: 1, z: 1}} size={{x: 1, y: 1, z: 1}} segments={{x: 1, y: 1, z: 1}} wireframe={false} color={cube.state.material.color} opacity={1} />
                 ))}
                 
-                <Cube key={nanoid()} name={'cube_test_001'} position={{x: -2, y: -2, z: -2}} />
-                <Cube key={nanoid()} name={'cube_test_002'} position={{x: 2, y: 2, z: 2}} />
+                <Cube id={nanoid()} key={999} name={'cube_test_001'} position={{x: -2, y: -2, z: -2}} />
+                <Cube id={nanoid()} key={998} name={'cube_test_002'} position={{x: 2, y: 2, z: 2}} />
+                <Cube id={nanoid()} key={997} name={'controlled_cube'} controlled />
                 {/* <Cube key={nanoid()} position={{x: 1, y: 1, z: 1}} rotation={{x: 0, y: 3, z: 0}} scale={{x: 1, y: 1, z: 1}} size={{x: 1, y: 1, z: 1}} segments={{x: 1, y: 1, z: 1}} wireframe={false} opacity={1} />
                 <Cube key={nanoid()} position={{x: 1, y: 3, z: 1}} color={'#00ffff'} /> */}
 

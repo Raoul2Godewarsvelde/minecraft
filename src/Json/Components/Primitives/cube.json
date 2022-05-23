@@ -1,7 +1,7 @@
 {
     "state": {
         "key": null,
-        "name": null,
+        "name": "added_cube",
         "transform" : {
             "position": {
                 "x": 0,

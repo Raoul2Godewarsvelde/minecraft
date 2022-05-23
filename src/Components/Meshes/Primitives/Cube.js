@@ -54,7 +54,8 @@ const Cube = ({ key, name, controlled, position, rotation, scale, size, segments
     // HANDLE CLICK
 
     const handleClick = (e) => {
-        setObjectSelected(e.object.name)
+        console.log(e)
+        setObjectSelected(e.object.uuid)
     } 
     
     return (

@@ -39,9 +39,9 @@ const CubeController = () => {
     return (
         <div id='home__controller'>
             <p style={{color: '#fff'}}>Position</p>
-            <Range rangeType={'object'} name={'x'} label={'X'} value={controlled_position.x} min={0} max={10} step={0.1} state={controlled_position} setState={controlled_setPosition} color={'#fff'} />
-            <Range rangeType={'object'} name={'z'} label={'Y'} value={controlled_position.z} min={0} max={10} step={0.1} state={controlled_position} setState={controlled_setPosition} color={'#fff'} />
-            <Range rangeType={'object'} name={'y'} label={'Z'} value={controlled_position.y} min={0} max={10} step={0.1} state={controlled_position} setState={controlled_setPosition} color={'#fff'} />
+            <Range rangeType={'object'} name={'x'} label={'X'} value={controlled_position.x} min={-10} max={10} step={0.1} state={controlled_position} setState={controlled_setPosition} color={'#fff'} />
+            <Range rangeType={'object'} name={'z'} label={'Y'} value={controlled_position.z} min={-10} max={10} step={0.1} state={controlled_position} setState={controlled_setPosition} color={'#fff'} />
+            <Range rangeType={'object'} name={'y'} label={'Z'} value={controlled_position.y} min={-10} max={10} step={0.1} state={controlled_position} setState={controlled_setPosition} color={'#fff'} />
 
             <p style={{color: '#fff'}}>Size</p>
             <Range rangeType={'object'} name={'x'} label={'X'} value={controlled_size.x} min={0} max={10} step={0.1} state={controlled_size} setState={controlled_setSize} color={'#fff'} />
