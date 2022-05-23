@@ -19,7 +19,7 @@ const App = () => {
   return (
     <>
       <Router>
-        <Header setMySmallWorldActivated={setMySmallWorldActivated} />
+        {/* <Header setMySmallWorldActivated={setMySmallWorldActivated} /> */}
 
         <Routes>
           <Route path='/' element={<Home />} />
