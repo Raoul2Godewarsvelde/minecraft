@@ -7,7 +7,7 @@ export const useInterfaceStore = create((set) => ({
     // LEFT PANEL
 
     leftPanel: {
-        isOpen: false
+        isOpen: true
     },
     setLeftPanelOpen: (isOpen) => set(produce(state => {state.isOpen = isOpen}))
 }))
