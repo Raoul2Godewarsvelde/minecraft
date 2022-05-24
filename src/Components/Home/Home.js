@@ -10,7 +10,7 @@ import {
     TopBar
 } from '@components/Panels/Registration/index'
 
-import { CubeController } from '@components/Controllers/Registration/index'
+/* import { CubeController } from '@components/Panels/Components/Controllers/Registration/index' */
 
 const Home = () => {
 

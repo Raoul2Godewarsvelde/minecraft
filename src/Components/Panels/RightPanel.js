@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CubeController } from '@components/Controllers/Registration/index'
+import { CubeController } from '@components/Panels/Components/Controllers/Registration/index'
 
 import '@styles/Components/Panels/right_panel.scss'
 

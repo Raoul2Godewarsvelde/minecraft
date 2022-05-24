@@ -8,7 +8,7 @@ import {
 
 import { useInterfaceStore } from '@hooks/useInterfaceStore'
 
-import { ToggleButton, CloseButton } from '@components/Panels/Components/Registration/index'
+import { ToggleButton, CloseButton } from '@components/Panels/Components//Buttons/Registration/index'
 
 const ControlButtonsTitle = () => {
 
