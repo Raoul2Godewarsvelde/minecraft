@@ -12,7 +12,7 @@ import { useInterfaceStore } from '@hooks/useInterfaceStore'
 
 import { PanelTitle } from '@components/Panels/Components/Registration/index'
 
-import { AddPrimitiveController, EnvironmentController } from '@components/Panels/Components/Controllers/Registration/index'
+import { EnvironmentController } from '@components/Panels/Components/Controllers/Registration/index'
 
 import '@styles/interface.scss'
 import '@styles/Components/Panels/global_settings.scss'

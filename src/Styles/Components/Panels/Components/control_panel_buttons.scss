@@ -1,0 +1,27 @@
+.controlPanelButtons__wrapper {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .controlButton {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 25px;
+        height: 25px;
+
+        margin: 2px;
+
+        background-color: var(--background-color-dark);
+    
+        border-radius: var(--border-radius-large);
+    
+        box-shadow: -3px -3px 7px var(--box-shadow-color-1), 3px 3px 5px var(--box-shadow-color-2);
+
+        cursor: pointer;
+    }
+}

@@ -4,7 +4,7 @@ const CloseButton = ({ closeButtonIcon, setCloseButtonState }) => {
 
     return (
         <div
-            className='controlButtons_panel'
+            className='controlButton'
             onClick={setCloseButtonState}
         >
             {closeButtonIcon}

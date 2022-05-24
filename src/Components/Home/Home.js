@@ -29,15 +29,16 @@ const Home = () => {
             <TopBar />
 
             {globalSettings.isOpen && (
-                    <GlobalSettings />
+                <GlobalSettings />
             )}
 
             {add.isOpen && (
-                    <Add />
+                <Add />
             )}
 
-            <RightPanel />
+            {/* <RightPanel /> */}
             {/* <CubeController /> */}
+            
             <Scene />
         </div>
     )

@@ -2,9 +2,11 @@
 
 :root {
     --color : #8D8B8B;
-    --background-color : #191919;
+    --background-color-light : #575757;
+    --background-color-dark : #191919;
 
-    --border-radius: 5px;
+    --border-radius-large: 5px;
+    --border-radius-small: 3px;
 
     --box-shadow-color-1 : #00000073;
     --box-shadow-color-2 : rgba(0, 0, 0, 0.288);
@@ -15,8 +17,18 @@
 // FONTS
 
 @font-face {
+    font-family: RobotoThin;
+    src: url("./Assets/Fonts/Roboto/Roboto-Thin.ttf");
+}
+
+@font-face {
     font-family: RobotoRegular;
     src: url("./Assets/Fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: RobotoMedium;
+    src: url("./Assets/Fonts/Roboto/Roboto-Medium.ttf");
 }
 
 @font-face {

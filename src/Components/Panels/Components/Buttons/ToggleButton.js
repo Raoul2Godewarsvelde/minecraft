@@ -8,7 +8,7 @@ const ToggleButton = ({ toggleButtonIcons, setToggleButtonState }) => {
 
     return (
         <div
-            className='controlButtons_panel'
+            className='controlButton'
             onClick={() => {
                 setToggleButtonState()
                 if(iconId === 0) {

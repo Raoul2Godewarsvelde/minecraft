@@ -1,17 +1,17 @@
 import React from 'react'
 
-import { useInterfaceStore } from '@hooks/useInterfaceStore'
-
 import { ToggleButton, CloseButton } from '@components/Panels/Components//Buttons/Registration/index'
 
-const ControlButtonsTitle = ({toggleButtonIcons, setToggleButtonState, closeButtonIcon, setCloseButtonState}) => {
+import '@styles/Components/Panels/Components/control_panel_buttons.scss'
+
+const ControlPanelButtons = ({toggleButtonIcons, setToggleButtonState, closeButtonIcon, setCloseButtonState}) => {
 
     return (
-        <div className='controlButtons__wrapper'>
+        <div className='controlPanelButtons__wrapper'>
             <ToggleButton toggleButtonIcons={toggleButtonIcons} setToggleButtonState={setToggleButtonState} />
             <CloseButton closeButtonIcon={closeButtonIcon} setCloseButtonState={setCloseButtonState} />
         </div>
     )
 }
 
-export default ControlButtonsTitle
+export default ControlPanelButtons

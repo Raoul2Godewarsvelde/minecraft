@@ -1,0 +1,18 @@
+.large_addButton__wrapper {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 3px;
+    padding: 2px;
+
+    color: #fffb;
+    background-color: var(--background-color-light);
+    
+    border-radius: var(--border-radius-small);
+    
+    box-shadow: -3px -3px 7px var(--box-shadow-color-1), 3px 3px 5px var(--box-shadow-color-2);
+
+    font-size: 12px;
+}
