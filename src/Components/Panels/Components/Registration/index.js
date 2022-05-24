@@ -1,9 +1,11 @@
-import ControlButton from '../ControlButton'
-import ControlButtonsTitle from '../ControlButtonsTitle'
+import CloseButton from '../CloseButton'
+import ControlPanelButtons from '../ControlPanelButtons'
 import PanelTitle from '../PanelTitle'
+import ToggleButton from '../ToggleButton'
 
 export {
-    ControlButton,
-    ControlButtonsTitle,
-    PanelTitle
+    CloseButton,
+    ControlPanelButtons,
+    PanelTitle,
+    ToggleButton
 }

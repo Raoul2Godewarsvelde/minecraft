@@ -4,10 +4,12 @@ import produce from 'immer'
 
 export const useInterfaceStore = create((set) => ({
 
-    // LEFT PANEL
+    // GLOBAL SETTINGS
 
-    leftPanel: {
-        isOpen: true
+    globalSettings: {
+        isOpen: true,
+        isCollapse: true
     },
-    setLeftPanelOpen: (isOpen) => set(produce(state => {state.isOpen = isOpen}))
+    setIsOpen_GlobalSettings: () => set(produce(state => {state.globalSettings.isOpen = !state.globalSettings.isOpen})),
+    setIsCollapse_GlobalSettings: () => set(produce(state => {state.globalSettings.isCollapse = !state.globalSettings.isCollapse}))
 }))

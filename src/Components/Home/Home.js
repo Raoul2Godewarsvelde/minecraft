@@ -1,20 +1,33 @@
 import React from 'react'
 
+import { useInterfaceStore } from '@hooks/useInterfaceStore'
+
 import { Scene } from '@components/Home/Registration/index'
 
 import {
-    LeftPanel,
+    GlobalSettings,
     RightPanel,
     TopBar
 } from '@components/Panels/Registration/index'
+
 import { CubeController } from '@components/Controllers/Registration/index'
 
 const Home = () => {
 
+    // HOOKS
+
+    const [globalSettings] = useInterfaceStore((state) => [
+        state.globalSettings
+    ])
+
+    // RETURN
+
     return (
         <div id='home__wrapper'>
             <TopBar />
-            <LeftPanel />
+            {globalSettings.isOpen && (
+                <GlobalSettings />
+            )}
             <RightPanel />
             {/* <CubeController /> */}
             <Scene />

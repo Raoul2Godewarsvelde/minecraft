@@ -1,9 +1,9 @@
-import LeftPanel from '../LeftPanel'
+import GlobalSettings from '../GlobalSettings'
 import RightPanel from '../RightPanel'
 import TopBar from '../TopBar'
 
 export {
-    LeftPanel,
+    GlobalSettings,
     RightPanel,
     TopBar
 }

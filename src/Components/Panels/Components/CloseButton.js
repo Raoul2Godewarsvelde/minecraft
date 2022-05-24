@@ -1,15 +1,15 @@
 import React from 'react'
 
-const ControlButton = ({ icon }) => {
+const CloseButton = ({ icon, setState }) => {
 
     return (
         <div
             className='controlButtons_panel'
-            /* onClick={} */
+            onClick={setState}
         >
             {icon}
         </div>
     )
 }
 
-export default ControlButton
+export default CloseButton
