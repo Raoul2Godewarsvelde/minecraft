@@ -5,6 +5,7 @@ import { useInterfaceStore } from '@hooks/useInterfaceStore'
 import { Scene } from '@components/Home/Registration/index'
 
 import {
+    Add,
     GlobalSettings,
     RightPanel,
     TopBar
@@ -16,8 +17,9 @@ const Home = () => {
 
     // HOOKS
 
-    const [globalSettings] = useInterfaceStore((state) => [
-        state.globalSettings
+    const [globalSettings, add] = useInterfaceStore((state) => [
+        state.globalSettings,
+        state.add
     ])
 
     // RETURN
@@ -25,9 +27,15 @@ const Home = () => {
     return (
         <div id='home__wrapper'>
             <TopBar />
+
             {globalSettings.isOpen && (
-                <GlobalSettings />
+                    <GlobalSettings />
             )}
+
+            {add.isOpen && (
+                    <Add />
+            )}
+
             <RightPanel />
             {/* <CubeController /> */}
             <Scene />

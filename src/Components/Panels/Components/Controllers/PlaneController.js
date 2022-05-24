@@ -9,20 +9,13 @@ const PlaneController = () => {
     // HOOKS
 
     const [controlled_position, controlled_setPosition, controlled_size, controlled_setSize, controlled_segments, controlled_setSegments, controlled_scale, controlled_setScale, controlled_rotation, controlled_setRotation, controlled_opacity, controlled_setOpacity, controlled_wireframe, controlled_setWireframe] = useCubeStore((state) => [
-        state.controlled_position,
-        state.controlled_setPosition,
-        state.controlled_size,
-        state.controlled_setSize,
-        state.controlled_segments,
-        state.controlled_setSegments,
-        state.controlled_scale,
-        state.controlled_setScale,
-        state.controlled_rotation,
-        state.controlled_setRotation,
-        state.controlled_opcaity,
-        state.controlled_setOpacity,
-        state.controlled_wireframe,
-        state.controlled_setWireframe
+        state.controlled_position, state.controlled_setPosition,
+        state.controlled_size, state.controlled_setSize,
+        state.controlled_segments, state.controlled_setSegments,
+        state.controlled_scale, state.controlled_setScale,
+        state.controlled_rotation, state.controlled_setRotation,
+        state.controlled_opcaity, state.controlled_setOpacity,
+        state.controlled_wireframe, state.controlled_setWireframe
     ])
 
     return (

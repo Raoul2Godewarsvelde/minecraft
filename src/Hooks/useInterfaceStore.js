@@ -8,7 +8,7 @@ export const useInterfaceStore = create((set) => ({
 
     globalSettings: {
         isOpen: true,
-        isCollapse: false
+        isCollapse: true
     },
     setIsOpen_GlobalSettings: () => set(produce(state => {state.globalSettings.isOpen = !state.globalSettings.isOpen})),
     setIsCollapse_GlobalSettings: () => set(produce(state => {state.globalSettings.isCollapse = !state.globalSettings.isCollapse})),
@@ -18,5 +18,14 @@ export const useInterfaceStore = create((set) => ({
     environment: {
         isCollapse: true
     },
-    setIsCollapse_Environment: () => set(produce(state => {state.environment.isCollapse = !state.environment.isCollapse}))
+    setIsCollapse_Environment: () => set(produce(state => {state.environment.isCollapse = !state.environment.isCollapse})),
+
+    // ADD
+
+    add: {
+        isOpen: true,
+        isCollapse: true
+    },
+    setIsOpen_Add: () => set(produce(state => {state.add.isOpen = !state.add.isOpen})),
+    setIsCollapse_Add: () => set(produce(state => {state.add.isCollapse = !state.add.isCollapse}))
 }))

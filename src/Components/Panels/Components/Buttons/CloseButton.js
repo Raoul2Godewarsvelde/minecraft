@@ -1,13 +1,13 @@
 import React from 'react'
 
-const CloseButton = ({ icon, setState }) => {
+const CloseButton = ({ closeButtonIcon, setCloseButtonState }) => {
 
     return (
         <div
             className='controlButtons_panel'
-            onClick={setState}
+            onClick={setCloseButtonState}
         >
-            {icon}
+            {closeButtonIcon}
         </div>
     )
 }

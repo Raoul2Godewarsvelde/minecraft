@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ToggleButton = ({ icon, setState }) => {
+const ToggleButton = ({ toggleButtonIcons, setToggleButtonState }) => {
 
     // STATES
 
@@ -10,7 +10,7 @@ const ToggleButton = ({ icon, setState }) => {
         <div
             className='controlButtons_panel'
             onClick={() => {
-                setState()
+                setToggleButtonState()
                 if(iconId === 0) {
                     setIconId(1)
                 } else {
@@ -18,7 +18,7 @@ const ToggleButton = ({ icon, setState }) => {
                 }
             }}
         >
-            {icon[iconId]}
+            {toggleButtonIcons[iconId]}
         </div>
     )
 }

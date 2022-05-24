@@ -39,7 +39,7 @@ const EnvironmentController = () => {
             {!environment.isCollapse && (
                 <>
                     <Color name={'environment_color'} label={'Color'} value={color} state={color} setState={setColor} />
-                    <File name={'environment_texture'} label={'Background texture'} value={texture} state={texture} setState={setTexture} />
+                    <File name={'environment_texture'} label={'Texture'} value={texture} state={texture} setState={setTexture} />
                     <Range rangeType={'value'} name={'environment_strength'} label={'Strength'} value={strength} min={0} max={1} step={0.001} state={strength} setState={setStrength} />
                 </>
             )}

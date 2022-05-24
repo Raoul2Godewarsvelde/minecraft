@@ -2,6 +2,12 @@ import React from 'react'
 
 import Draggable from 'react-draggable'
 
+import {
+    Close,
+    ExpandLess,
+    ExpandMore
+} from '@mui/icons-material'
+
 import { useInterfaceStore } from '@hooks/useInterfaceStore'
 
 import { PanelTitle } from '@components/Panels/Components/Registration/index'
@@ -9,14 +15,18 @@ import { PanelTitle } from '@components/Panels/Components/Registration/index'
 import { AddPrimitiveController, EnvironmentController } from '@components/Panels/Components/Controllers/Registration/index'
 
 import '@styles/interface.scss'
-import '@styles/Components/Panels/left_panel.scss'
+import '@styles/Components/Panels/global_settings.scss'
 
 const GlobalSettings = () => {
 
     // HOOKS
 
-    const [globalSettings] = useInterfaceStore((state) => [
-        state.globalSettings
+    // HOOKS
+
+    const [globalSettings, setIsOpen_GlobalSettings, setIsCollapse_GlobalSettings] = useInterfaceStore((state) => [
+        state.globalSettings,
+        state.setIsOpen_GlobalSettings,
+        state.setIsCollapse_GlobalSettings
     ])
 
     // RETURN
@@ -25,12 +35,11 @@ const GlobalSettings = () => {
         <Draggable
             handle='#globalSettings_title_panel'
         >
-            <div id='leftPanel__wrapper' className='panel__wrappers'>
-                <PanelTitle id={'globalSettings_title_panel'} title={'Global Settings'} />
+            <div id='globalSettings__wrapper' className='panel__wrappers'>
+                <PanelTitle id={'globalSettings_title_panel'} title={'Global Settings'} toggleButtonIcons={[<ExpandLess />, <ExpandMore />]} setToggleButtonState={setIsCollapse_GlobalSettings} closeButtonIcon={<Close />} setCloseButtonState={setIsOpen_GlobalSettings} />
                 {!globalSettings.isCollapse && (
                     <>
                         <EnvironmentController />
-                        <AddPrimitiveController />
                     </>
                 )}
             </div>
