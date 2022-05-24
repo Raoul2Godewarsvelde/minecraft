@@ -7,7 +7,55 @@
     width: 100%;
     height: 30px;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
     background-color: var(--background-color);
     
     border-radius: 0px;
+
+    #leftNav_topBar {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        p {
+    
+            margin-top: 2px;
+            margin-left: 20px;
+    
+            font-size: 14px;
+        }
+    
+        #logo_topBar {
+    
+            margin-top: 0px;
+            margin-left: 5px;
+            
+            font-family: RobotoBold;
+            font-size: 15px;
+        }
+    }
+
+    #rightNav_topBar {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        p {
+    
+            margin-top: 2px;
+            margin-right: 20px;
+    
+            font-size: 14px;
+        }
+
+        .lastItem_rightNav_topBar {
+    
+            margin-right: 5px;
+        }
+    }
 }
