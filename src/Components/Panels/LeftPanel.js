@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Draggable from 'react-draggable'
+
 import { useInterfaceStore } from '@hooks/useInterfaceStore'
 
 import { PanelTitle } from '@components/Panels/Components/Registration/index'
@@ -20,15 +22,17 @@ const LeftPanel = () => {
     // RETURN
 
     return (
-        <>
+        <Draggable
+            handle='#globalSettings_title_panel'
+        >
             {leftPanel.isOpen && (
                 <div id='leftPanel__wrapper' className='panel__wrappers'>
-                    <PanelTitle title={'Global Settings'} />
+                    <PanelTitle id={'globalSettings_title_panel'} title={'Global Settings'} />
                     <EnvironmentController />
                     <AddPrimitiveController />
                 </div>
             )}
-        </>
+        </Draggable>
     )
 }
 
