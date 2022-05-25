@@ -24,7 +24,7 @@ export const useInterfaceStore = create((set) => ({
 
     add: {
         isOpen: true,
-        isCollapse: true
+        isCollapse: false
     },
     setIsOpen_Add: () => set(produce(state => {state.add.isOpen = !state.add.isOpen})),
     setIsCollapse_Add: () => set(produce(state => {state.add.isCollapse = !state.add.isCollapse})),
@@ -39,7 +39,7 @@ export const useInterfaceStore = create((set) => ({
     // PRIMITIVES
 
     primitives: {
-        isCollapse: true
+        isCollapse: false
     },
     setIsCollapse_Primitives: () => set(produce(state => {state.primitives.isCollapse = !state.primitives.isCollapse})),
 
@@ -49,6 +49,13 @@ export const useInterfaceStore = create((set) => ({
         isCollapse: true
     },
     setIsCollapse_Text: () => set(produce(state => {state.text.isCollapse = !state.text.isCollapse})),
+
+    // HTML
+
+    html: {
+        isCollapse: true
+    },
+    setIsCollapse_Html: () => set(produce(state => {state.html.isCollapse = !state.html.isCollapse})),
 
     // MATERIALS
 

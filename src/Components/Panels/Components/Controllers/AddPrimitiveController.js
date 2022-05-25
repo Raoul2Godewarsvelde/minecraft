@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { useInterfaceStore } from '@hooks/useInterfaceStore'
-/* import { useSceneStore } from '@hooks/useSceneStore' */
+import { useSceneStore } from '@hooks/useSceneStore'
+/* import { useCubeStore } from '@hooks/useCubeStore' */
 
 import { AddButton } from '@components/Panels/Components/Buttons/Registration/index'
 
@@ -13,6 +14,7 @@ const AddPrimitiveController = () => {
         curves, setIsCollapse_Curves,
         primitives, setIsCollapse_Primitives,
         text, setIsCollapse_Text,
+        html, setIsCollapse_Html,
         materials, setIsCollapse_Materials,
         lights, setIsCollapse_Lights,
         camera, setIsCollapse_Camera,
@@ -22,11 +24,20 @@ const AddPrimitiveController = () => {
         state.curves, state.setIsCollapse_Curves,
         state.primitives, state.setIsCollapse_Primitives,
         state.text, state.setIsCollapse_Text,
+        state.html, state.setIsCollapse_Html,
         state.materials, state.setIsCollapse_Materials,
         state.lights, state.setIsCollapse_Lights,
         state.camera, state.setIsCollapse_Camera,
         state.importObject, state.setIsCollapse_ImportObject,
         state.helpers, state.setIsCollapse_Helpers
+    ])
+
+    // HOOKS
+
+    const [
+        addCube
+    ] = useSceneStore((state) => [
+        state.addCube
     ])
 
     /* const [addCube] = useSceneStore((state) => [
@@ -62,7 +73,10 @@ const AddPrimitiveController = () => {
                     <>
                         <AddButton name={'Plane'} />
                         <AddButton name={'Circle'} />
-                        <AddButton name={'Cube'} />
+                        <AddButton
+                            name={'Cube'}
+                            onClick={addCube}
+                        />
                         <AddButton name={'UV Sphere'} />
                         <AddButton name={'Ico Sphere'} />
                         <AddButton name={'Cylinder'} />
@@ -79,6 +93,19 @@ const AddPrimitiveController = () => {
                     Text
                 </h1>
                 {!text.isCollapse && (
+                    <>
+                        <AddButton name={'Text'} />
+                    </>
+                )}
+            </div>
+
+            <div className='controller__wrappers'>
+                <h1
+                    onClick={setIsCollapse_Html}
+                >
+                    HTML
+                </h1>
+                {!html.isCollapse && (
                     <>
                         <AddButton name={'Text'} />
                     </>
