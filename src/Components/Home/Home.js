@@ -7,9 +7,13 @@ import { Scene } from '@components/Home/Registration/index'
 import {
     Add,
     GlobalSettings,
-    RightPanel,
+    /* RightPanel, */
     TopBar
 } from '@components/Panels/Registration/index'
+
+import {
+    Cube
+} from '@components/Panels/Add/Primitives/Registration/index'
 
 /* import { CubeController } from '@components/Panels/Components/Controllers/Registration/index' */
 
@@ -17,9 +21,14 @@ const Home = () => {
 
     // HOOKS
 
-    const [globalSettings, add] = useInterfaceStore((state) => [
+    const [
+        globalSettings,
+        add,
+        cube
+    ] = useInterfaceStore((state) => [
         state.globalSettings,
-        state.add
+        state.add,
+        state.cube
     ])
 
     // RETURN
@@ -34,6 +43,10 @@ const Home = () => {
 
             {add.isOpen && (
                 <Add />
+            )}
+
+            {cube.isOpen && (
+                <Cube />
             )}
 
             {/* <RightPanel /> */}

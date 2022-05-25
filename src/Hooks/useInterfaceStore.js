@@ -90,5 +90,14 @@ export const useInterfaceStore = create((set) => ({
     helpers: {
         isCollapse: true
     },
-    setIsCollapse_Helpers: () => set(produce(state => {state.helpers.isCollapse = !state.helpers.isCollapse}))
+    setIsCollapse_Helpers: () => set(produce(state => {state.helpers.isCollapse = !state.helpers.isCollapse})),
+
+    // CUBE
+
+    cube: {
+        isOpen: true,
+        isCollapse: true
+    },
+    setIsOpen_Cube: () => set(produce(state => {state.cube.isOpen = !state.cube.isOpen})),
+    setIsCollapse_Cube: () => set(produce(state => {state.cube.isCollapse = !state.cube.isCollapse})),
 }))
