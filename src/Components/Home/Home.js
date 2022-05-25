@@ -52,7 +52,7 @@ const Home = () => {
             )}
 
             {cubePanel.isOpen && (
-                <Cube cube={cubes[cubes.length - 1]} />
+                <Cube />
             )}
 
             <Scene />

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useSceneStore } from '@hooks/useSceneStore'
 import { useCubeStore } from '@hooks/useCubeStore'
 
 import { CheckBox, Color, Range } from '@components/Panels/Components/Inputs/Registration/index'
@@ -9,6 +10,7 @@ const CubeController = () => {
     // HOOKS
 
     const [
+        cubes,
         controlled_position, controlled_setPosition,
         controlled_size, controlled_setSize,
         controlled_segments, controlled_setSegments,
@@ -17,7 +19,8 @@ const CubeController = () => {
         controlled_wireframe, controlled_setWireframe,
         controlled_color, controlled_setColor,
         controlled_opacity, controlled_setOpacity
-    ] = useCubeStore((state) => [
+    ] = useSceneStore((state) => [
+        state.cubes,
         state.controlled_position,
         state.controlled_setPosition,
         state.controlled_size,
@@ -39,11 +42,11 @@ const CubeController = () => {
     return (
         <div id='home__controller'>
             <p style={{color: '#fff'}}>Position</p>
-            <Range rangeType={'object'} name={'x'} label={'X'} value={controlled_position.x} min={-10} max={10} step={0.1} state={controlled_position} setState={controlled_setPosition} color={'#fff'} />
-            <Range rangeType={'object'} name={'z'} label={'Y'} value={controlled_position.z} min={-10} max={10} step={0.1} state={controlled_position} setState={controlled_setPosition} color={'#fff'} />
-            <Range rangeType={'object'} name={'y'} label={'Z'} value={controlled_position.y} min={-10} max={10} step={0.1} state={controlled_position} setState={controlled_setPosition} color={'#fff'} />
+            <Range rangeType={'object'} name={`cubes[${0}].state.transform.position.x`} label={'X'} value={cubes[0].state.transform.position.x} min={-10} max={10} step={0.1} state={cubes[0].state.transform.position.x} setState={controlled_setPosition} color={'#fff'} />
+            <Range rangeType={'object'} name={`cubes[${0}].state.transform.position.z`} label={'Y'} value={cubes[0].state.transform.position.z} min={-10} max={10} step={0.1} state={cubes[0].state.transform.position.y} setState={controlled_setPosition} color={'#fff'} />
+            <Range rangeType={'object'} name={`cubes[${0}].state.transform.position.y`} label={'Z'} value={cubes[0].state.transform.position.y} min={-10} max={10} step={0.1} state={cubes[0].state.transform.position.z} setState={controlled_setPosition} color={'#fff'} />
 
-            <p style={{color: '#fff'}}>Size</p>
+            {/* <p style={{color: '#fff'}}>Size</p>
             <Range rangeType={'object'} name={'x'} label={'X'} value={controlled_size.x} min={0} max={10} step={0.1} state={controlled_size} setState={controlled_setSize} color={'#fff'} />
             <Range rangeType={'object'} name={'y'} label={'Y'} value={controlled_size.y} min={0} max={10} step={0.1} state={controlled_size} setState={controlled_setSize} color={'#fff'} />
             <Range rangeType={'object'} name={'z'} label={'Z'} value={controlled_size.z} min={0} max={10} step={0.1} state={controlled_size} setState={controlled_setSize} color={'#fff'} />
@@ -70,7 +73,7 @@ const CubeController = () => {
             <Range rangeType={'value'} value={controlled_opacity} min={0} max={1} step={0.01} state={controlled_opacity} setState={controlled_setOpacity} />
 
             <p style={{color: '#fff'}}>Wireframe</p>
-            <CheckBox name={controlled_wireframe} value={controlled_wireframe} setState={controlled_setWireframe} />
+            <CheckBox name={controlled_wireframe} value={controlled_wireframe} setState={controlled_setWireframe} /> */}
         </div>
     )
 }

@@ -22,7 +22,7 @@ const CheckBox = ({ name, label, value, setState }) => {
                 type='checkbox'
                 name={name}
                 value={value}
-                onChange={(e) => setState(e.target.checked)}
+                onChange={(e) => setState(e.target.checked ? 1 : 0)}
             />
         </div>
     )
