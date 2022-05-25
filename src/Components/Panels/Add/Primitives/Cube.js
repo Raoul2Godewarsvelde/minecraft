@@ -19,7 +19,7 @@ const Cube = () => {
 
     // HOOKS
 
-    const [add, setIsOpen_Add, setIsCollapse_Add] = useInterfaceStore((state) => [
+    const [cube, setIsOpen_Cube, setIsCollapse_Cube] = useInterfaceStore((state) => [
         state.cube,
         state.setIsOpen_Cube,
         state.setIsCollapse_Cube
@@ -32,8 +32,8 @@ const Cube = () => {
             handle='#cube_title_panel'
         >
             <div id='cube__wrapper' className='panel__wrappers'>
-                <PanelTitle id={'cube_title_panel'} title={'Cube'} toggleButtonIcons={[<ExpandLess />, <ExpandMore />]} setToggleButtonState={setIsCollapse_Add} closeButtonIcon={<Close />} setCloseButtonState={setIsOpen_Add} />
-                {!add.isCollapse && (
+                <PanelTitle id={'cube_title_panel'} title={'Cube'} toggleButtonIcons={[<ExpandLess />, <ExpandMore />]} setToggleButtonState={setIsCollapse_Cube} closeButtonIcon={<Close />} setCloseButtonState={setIsOpen_Cube} />
+                {!cube.isCollapse && (
                     <>
                         {/* <AddPrimitiveController /> */}
                     </>
