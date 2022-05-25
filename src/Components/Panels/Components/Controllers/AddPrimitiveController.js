@@ -11,6 +11,7 @@ const AddPrimitiveController = () => {
     // HOOKS
 
     const [
+        setIsOpen_CubePanel,
         curves, setIsCollapse_Curves,
         primitives, setIsCollapse_Primitives,
         text, setIsCollapse_Text,
@@ -21,6 +22,7 @@ const AddPrimitiveController = () => {
         importObject, setIsCollapse_ImportObject,
         helpers, setIsCollapse_Helpers
     ] = useInterfaceStore((state) => [
+        state.setIsOpen_CubePanel,
         state.curves, state.setIsCollapse_Curves,
         state.primitives, state.setIsCollapse_Primitives,
         state.text, state.setIsCollapse_Text,
@@ -40,9 +42,12 @@ const AddPrimitiveController = () => {
         state.addCube
     ])
 
-    /* const [addCube] = useSceneStore((state) => [
-        state.addCube
-    ]) */
+    // HANDLE CLICKS
+
+    const handleCubeClick = () => {
+        addCube()
+        setIsOpen_CubePanel()
+    }
 
     // RETURN
 
@@ -75,7 +80,7 @@ const AddPrimitiveController = () => {
                         <AddButton name={'Circle'} />
                         <AddButton
                             name={'Cube'}
-                            onClick={addCube}
+                            onClick={handleCubeClick}
                         />
                         <AddButton name={'UV Sphere'} />
                         <AddButton name={'Ico Sphere'} />

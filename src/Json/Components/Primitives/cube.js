@@ -32,8 +32,8 @@ const cube = {
             }
         },
         material: {
-            wireframe: true,
-            color: '#ff00ff',
+            wireframe: false,
+            color: '#ffff00',
             opacity: 0.8
         }
     }

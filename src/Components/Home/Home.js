@@ -1,13 +1,13 @@
 import React from 'react'
 
 import { useInterfaceStore } from '@hooks/useInterfaceStore'
+import { useSceneStore } from '@hooks/useSceneStore'
 
 import { Scene } from '@components/Home/Registration/index'
 
 import {
     Add,
     GlobalSettings,
-    /* RightPanel, */
     TopBar
 } from '@components/Panels/Registration/index'
 
@@ -24,11 +24,17 @@ const Home = () => {
     const [
         globalSettings,
         add,
-        cube
+        cubePanel
     ] = useInterfaceStore((state) => [
         state.globalSettings,
         state.add,
-        state.cube
+        state.cubePanel
+    ])
+
+    const [
+        cubes
+    ] = useSceneStore((state) => [
+        state.cubes
     ])
 
     // RETURN
@@ -45,13 +51,10 @@ const Home = () => {
                 <Add />
             )}
 
-            {cube.isOpen && (
-                <Cube />
+            {cubePanel.isOpen && (
+                <Cube cube={cubes[cubes.length - 1]} />
             )}
 
-            {/* <RightPanel /> */}
-            {/* <CubeController /> */}
-            
             <Scene />
         </div>
     )

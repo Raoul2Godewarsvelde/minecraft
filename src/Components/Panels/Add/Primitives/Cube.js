@@ -12,6 +12,8 @@ import { useInterfaceStore } from '@hooks/useInterfaceStore'
 
 import { PanelTitle } from '@components/Panels/Components/Registration/index'
 
+import { CubeController } from '@components/Panels/Components/Controllers/Registration/index'
+
 import '@styles/interface.scss'
 import '@styles/Components/Panels/Primitives/cube.scss'
 
@@ -19,10 +21,8 @@ const Cube = () => {
 
     // HOOKS
 
-    const [cube, setIsOpen_Cube, setIsCollapse_Cube] = useInterfaceStore((state) => [
-        state.cube,
-        state.setIsOpen_Cube,
-        state.setIsCollapse_Cube
+    const [cubePanel, setIsOpen_CubePanel, setIsCollapse_CubePanel] = useInterfaceStore((state) => [
+        state.cubePanel, state.setIsOpen_CubePanel, state.setIsCollapse_CubePanel
     ])
 
     // RETURN
@@ -32,10 +32,10 @@ const Cube = () => {
             handle='#cube_title_panel'
         >
             <div id='cube__wrapper' className='panel__wrappers'>
-                <PanelTitle id={'cube_title_panel'} title={'Cube'} toggleButtonIcons={[<ExpandLess />, <ExpandMore />]} setToggleButtonState={setIsCollapse_Cube} closeButtonIcon={<Close />} setCloseButtonState={setIsOpen_Cube} />
-                {!cube.isCollapse && (
+                <PanelTitle id={'cube_title_panel'} title={'Cube'} toggleButtonIcons={[<ExpandLess />, <ExpandMore />]} setToggleButtonState={setIsCollapse_CubePanel} closeButtonIcon={<Close />} setCloseButtonState={setIsOpen_CubePanel} />
+                {!cubePanel.isCollapse && (
                     <>
-                        {/* <AddPrimitiveController /> */}
+                        <CubeController />
                     </>
                 )}
             </div>

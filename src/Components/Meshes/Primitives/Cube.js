@@ -5,7 +5,7 @@ import { useFrame } from '@react-three/fiber'
 import { useSceneStore } from '@hooks/useSceneStore'
 import { useCubeStore } from '@hooks/useCubeStore'
 
-const Cube = ({ key, name, controlled, position, rotation, scale, size, segments, wireframe, color, opacity }) => {
+const Cube = ({ name, controlled, position, rotation, scale, size, segments, wireframe, color, opacity }) => {
 
     // REF
 
@@ -60,7 +60,6 @@ const Cube = ({ key, name, controlled, position, rotation, scale, size, segments
     
     return (
         <mesh
-            key={key}
             name={name}
 
             ref={cube}

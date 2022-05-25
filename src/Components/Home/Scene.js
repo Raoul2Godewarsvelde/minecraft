@@ -53,7 +53,7 @@ const Scene = () => {
                 />
 
                 {cubes.map((cube, index) => (
-                    <Cube id={nanoid()} /* key={index} */ name={cube.state.name} position={cube.state.transform.position} scale={cube.state.transform.scale} rotation={cube.state.transform.rotation} size={cube.state.geometry.size} segments={cube.state.geometry.segments} wireframe={cube.state.material.wireframe} color={cube.state.material.color} opacity={cube.state.material.opacity} />
+                    <Cube id={nanoid()} key={index} name={cube.state.name} position={cube.state.transform.position} scale={cube.state.transform.scale} rotation={cube.state.transform.rotation} size={cube.state.geometry.size} segments={cube.state.geometry.segments} wireframe={cube.state.material.wireframe} color={cube.state.material.color} opacity={cube.state.material.opacity} />
                 ))}
                 
                 {/* <Cube id={nanoid()} key={999} name={'cube_test_001'} position={{x: -2, y: -2, z: -2}} />
