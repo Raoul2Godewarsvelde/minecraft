@@ -193,6 +193,7 @@ const AddPrimitiveController = () => {
                 </h1>
                 {!helpers.isCollapse && (
                     <>
+                        <AddButton name={'Empty'} />
                         <AddButton name={'Grid'} />
                     </>
                 )}
